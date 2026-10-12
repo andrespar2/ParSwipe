@@ -10,6 +10,11 @@ import androidx.core.content.ContextCompat
 object Permissions {
 
     fun required(): Array<String> = when {
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE -> arrayOf(
+            Manifest.permission.READ_MEDIA_IMAGES,
+            Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED,
+        )
+
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ->
             arrayOf(Manifest.permission.READ_MEDIA_IMAGES)
 
@@ -22,8 +27,17 @@ object Permissions {
         )
     }
 
-    fun isGranted(context: Context): Boolean = required().all { permission ->
-        ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED
+    fun isGranted(context: Context): Boolean {
+        val full = required().all { permission ->
+            ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED
+        }
+        if (full) return true
+        // Android 14+: el usuario puede conceder acceso parcial ("Seleccionar fotos").
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE &&
+            ContextCompat.checkSelfPermission(
+                context,
+                Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED,
+            ) == PackageManager.PERMISSION_GRANTED
     }
 
     fun label(): String = when {
