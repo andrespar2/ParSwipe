@@ -417,21 +417,21 @@ private fun ActionRow(
         }
 
         ActionButton(
-            label = "Eliminar",
-            container = ParColors.Delete,
-            contentColor = ParColors.Black,
-            enabled = deleteEnabled,
-            modifier = Modifier.weight(1f),
-            onClick = onDelete,
-        )
-
-        ActionButton(
             label = "Conservar",
             container = ParColors.Keep,
             contentColor = ParColors.Black,
             enabled = keepEnabled,
             modifier = Modifier.weight(1f),
             onClick = onKeep,
+        )
+
+        ActionButton(
+            label = "Eliminar",
+            container = ParColors.Delete,
+            contentColor = ParColors.Black,
+            enabled = deleteEnabled,
+            modifier = Modifier.weight(1f),
+            onClick = onDelete,
         )
     }
 }
