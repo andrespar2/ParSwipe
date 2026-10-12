@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Tarjeta trasera -->
+    <path
+        android:fillColor="#1F1F1F"
+        android:pathData="M40,30 h34 a6,6 0 0 1 6,6 v34 a6,6 0 0 1 -6,6 h-34 a6,6 0 0 1 -6,-6 v-34 a6,6 0 0 1 6,-6 z" />
+
+    <!-- Tarjeta delantera -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M28,38 h34 a6,6 0 0 1 6,6 v34 a6,6 0 0 1 -6,6 h-34 a6,6 0 0 1 -6,-6 v-34 a6,6 0 0 1 6,-6 z" />
+
+    <!-- Montaña -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M28,72 l11,-13 l8,9 l7,-8 l14,16 h-34 a6,6 0 0 1 -6,-4 z" />
+
+    <!-- Sol -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M52,50 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0" />
+</vector>
