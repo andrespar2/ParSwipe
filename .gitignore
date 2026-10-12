@@ -11,3 +11,4 @@ keystore.properties
 *.jks
 *.keystore
 release/
+*.apk
